@@ -7,13 +7,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start":"npm run build && node dist/app.js",
-    "docker:build":"docker build . -t vxtwitterbot && docker save -o vxtwitterbot.tar vxtwitterbot"
+    "start": "npm run build && node dist/app.js",
+    "docker:build": "docker build . -t vxtwitterbot && docker save -o vxtwitterbot.tar vxtwitterbot"
   },
   "author": "rickymo",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^14.13.0",
     "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
   }
 }
