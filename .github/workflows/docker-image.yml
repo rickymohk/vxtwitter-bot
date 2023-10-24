@@ -18,9 +18,9 @@ jobs:
       run: |
         npm i
         npm run build
-        docker build . --file Dockerfile --tag vxtwitterbot:$(date +%s)
+        docker build . --file Dockerfile --tag vxtwitterbot:latest
     - name: Container Image Artifact Upload
       uses: ishworkh/container-image-artifact-upload@v1.0.0
       with:
-        image: vxtwitterbot:$(date +%s)
+        image: vxtwitterbot:latest
 
