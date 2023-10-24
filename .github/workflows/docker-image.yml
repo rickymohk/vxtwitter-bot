@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag vxtwitterbot:$(date +%s)
+    - name: Container Image Artifact Upload
+      uses: ishworkh/container-image-artifact-upload@v1.0.0
+      with:
+        image: vxtwitterbot:$(date +%s)
+
