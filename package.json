@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "npm run build && node dist/app.js",
-    "docker:build": "docker build . -t vxtwitterbot && docker save -o vxtwitterbot.tar vxtwitterbot"
+    "docker:build": "tsc && docker build . -t vxtwitterbot && docker save -o vxtwitterbot.tar vxtwitterbot"
   },
   "author": "rickymo",
   "license": "MIT",
