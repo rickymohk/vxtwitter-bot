@@ -49,7 +49,7 @@ client.on("messageCreate", async (message:Message) => {
     if (urls) {
       const modifiedUrls = urls
         .filter((url:string)=> url.includes('x.com') || url.includes('twitter.com'))
-        .map((url:string) => url.replace(/(x\.com|twitter\.com)/, 'vxtwitter.com'));
+        .map((url:string) => url.replace(/(?<=https:\/\/)(x\.com|twitter\.com)/, 'vxtwitter.com'));
   
       if (modifiedUrls.length > 0) {
         const reply = modifiedUrls.join('\n');
