@@ -43,7 +43,7 @@ client.on("messageCreate", async (message:Message) => {
   {
     if (message.author.bot) return; // Ignore messages from other bots
 
-    const urlRegex = /(https:\/\/(twitter|x).com\/).+/g;
+    const urlRegex = /(https:\/\/(twitter|x).com\/)\S+/g;
     const urls = message.content.match(urlRegex);
   
     if (urls) {
